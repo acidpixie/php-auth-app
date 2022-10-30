@@ -15,9 +15,26 @@
 </head>
 <body>
 
+<div>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Reading List</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Other</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Logout</a>
+    </li>
+  </ul>
+</div>   
+
+
     <div class="container-fluid">
-
-
+      
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
           <div class="card h-100">

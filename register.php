@@ -1,3 +1,16 @@
+<?php
+
+//error checking code
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// include('./classes/database.php');
+include "../classes/register.class.php";
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +51,9 @@
             <div class="card-body p-5 shadow-5 text-center">
               <h2 class="fw-bold mb-5">Register New User</h2>
               <form>
+
+                <?php include('./classes/errors.php') ?>
+
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row">
                   <div class="col-md-6 mb-4">
@@ -81,6 +97,12 @@
                       </select>
                   </div>
 
+                  <!-- 
+                  <input type="radio" value="none" id="radioOne" name="account" checked/>
+                  <label for="radioOne" class="radio">Personal</label>
+                  <input type="radio" value="none" id="radioTwo" name="account" />
+                  <label for="radioTwo" class="radio">Company</label>
+                  -->
 
                 <div class="form-outline mb-4">
                     <input type="text" id="code" name="code" class="form-control" placeholder="Leave blank if user type 'member' is selected" />

@@ -1,3 +1,27 @@
+<?php
+
+//error checking code
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+/* if(isset($_SESSION['email'])) {
+
+  $_SESSION['msg'] = "You need to login to view this page";
+  header("location : index.php");
+}
+
+if(isset($_GET['logout'])){
+
+  session_destroy();
+  unset($_SESSION['email']);
+  header("location : index.php");
+} */
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +35,7 @@
     <script src="https://use.fontawesome.com/8ad1b327a2.js"></script>
     <link rel="stylesheet" href="styles.css">
 
-    <title>Login Page</title>
+    <title>Home Page</title>
 </head>
 <body>
 
@@ -34,6 +58,16 @@
 
 
     <div class="container-fluid">
+
+
+    <div>
+
+    
+    </div>
+
+
+
+
       
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">

@@ -6,12 +6,40 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include "./classes/DBConnect.php";
+include "./classes/User.php";
+include "./includes/load.inc.php";
 
 $dbconnect = new DBConnect();
+  
+$_SESSION['user'] = loadData($dbconnect);
+var_dump($_SESSION['user']);
 
+/* 
 $connectedToDb = $dbconnect->connectToDB();
 
-var_dump($connectedToDb);
+$statement = "SELECT * FROM  users";
+
+if ($result = $connectedToDb->query($statement)) {
+
+  // var_dump($result) ;
+  $connectedToDb->close();
+
+  // while ($obj = $result->fetch_object("User", ['id', 'firstname', 'surname', 'email', 'password', 'type'])) {
+
+  while ($obj = $result->fetch_object()) {
+      //gets rid of the stdclass
+    $newUser = new User($obj->id, $obj->firstname, $obj->surname, $obj->email, $obj->password, $obj->type);
+
+    var_dump($newUser);
+    echo "<br> <br>";
+    echo "$newUser";
+  }
+
+  } else {
+
+  die("Connection Failed: " . $connectedToDb->error);
+}
+*/
 
 ?>
 
@@ -98,7 +126,34 @@ var_dump($connectedToDb);
   </section>
   <!-- Section: Design Block -->
 
+  <?php 
   
+  foreach ($_SESSION['user'] as $users) {
+    echo "
+    <div>
+        $users->id
+    </div>
+    <div>
+        $users->firstname
+    </div>
+    <div>
+        $users->surname
+    </div>
+    <div>
+        $users->email    
+    </div>
+    <div>
+        $users->password    
+    </div>
+    <div>
+        $users->type    
+    </div>  
+    
+    ";
+  }
+    
+  ?>
+
     
     </body>
 </html>

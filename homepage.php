@@ -5,6 +5,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+include "./classes/DBConnect.php";
+include "./classes/Books.php";
+include "./includes/books.inc.php";
+
+$dbconnect = new DBConnect();
+  
+$_SESSION['book'] = loadBooks($dbconnect);
+var_dump($_SESSION['book']);
 
 ?>
 
@@ -108,6 +116,41 @@ error_reporting(E_ALL);
       </div>
 
     </div>
+
+
+    <?php 
+  
+  foreach ($_SESSION['book'] as $books) {
+    echo "
+    <div>
+    $books->book_id
+    </div>
+    <div>
+    $books->title
+    </div>
+    <div>
+    $books->author
+    </div>
+    <div>
+    $books->author_id    
+    </div>
+    <div>
+    $books->genre    
+    </div>
+    <div>
+    $books->ages    
+    </div> 
+    <div>
+    $books->year    
+    </div>  
+    <div>
+    $books->image
+    </div>   
+    
+    ";
+  }
+    
+  ?>
     
 </body>
 </html>

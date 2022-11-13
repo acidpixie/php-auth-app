@@ -88,5 +88,9 @@ class User {
         return $this;
     }
 
-   
+   //convert obj to string and concatenate it
+    public function __toString()
+    {
+        return $this->id . " - " .  $this->firstname . " - " . $this->surname . " - " . $this->email . " - " . $this->password . " - " . $this->type;
+    }
 }

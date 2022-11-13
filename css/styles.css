@@ -5,3 +5,11 @@ body {
 }
 
 
+/* Homepage Styling */
+
+.heading {
+    color: red;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}

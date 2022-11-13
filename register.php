@@ -5,9 +5,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// include('./classes/database.php');
-include "../classes/register.class.php";
-
 
 ?>
 
@@ -21,7 +18,7 @@ include "../classes/register.class.php";
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/8ad1b327a2.js"></script>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css" type="text/css">
     
     <title>Register</title>
 
@@ -52,7 +49,6 @@ include "../classes/register.class.php";
               <h2 class="fw-bold mb-5">Register New User</h2>
               <form>
 
-                <?php include('./classes/errors.php') ?>
 
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row">
@@ -82,32 +78,14 @@ include "../classes/register.class.php";
                   <label class="form-label" for="regPassword">Password</label>
                 </div>
 
-                <!-- Password authentication -->
-                <div class="form-outline mb-4">
-                  <input type="password" id="regPassword2" name="password2" class="form-control" required />
-                  <label class="form-label" for="regPassword2">Confirm Password</label>
-                </div>
-
                 <!-- User Type Selection -->
                 <div class="form-outline mb-4">
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" required>
-                        <option selected name="type">User Type</option>
-                        <option value="1" name="member">Member</option>
-                        <option value="2" name="librarian">Librarian</option>
-                      </select>
-                  </div>
-
-                  <!-- 
-                  <input type="radio" value="none" id="radioOne" name="account" checked/>
-                  <label for="radioOne" class="radio">Personal</label>
-                  <input type="radio" value="none" id="radioTwo" name="account" />
-                  <label for="radioTwo" class="radio">Company</label>
-                  -->
-
-                <div class="form-outline mb-4">
-                    <input type="text" id="code" name="code" class="form-control" placeholder="Leave blank if user type 'member' is selected" />
-                    <label class="form-label" for="code">Library Code</label>
-                </div>             
+                  <input type="radio" value="0" id="radioOne" name="type" checked/>
+                  <label for="radioOne" class="radio">User</label>
+                  <input type="radio" value="1" id="radioTwo" name="type" />
+                  <label for="radioTwo" class="radio">Librarian</label>
+                </div>  
+       
   
                 <!-- Submit button -->
                 <button type="submit" name="registerBtn" class="btn btn-dark btn-block mb-4">

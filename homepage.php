@@ -10,147 +10,107 @@ include "./classes/Books.php";
 include "./includes/books.inc.php";
 
 $dbconnect = new DBConnect();
-  
+
 $_SESSION['book'] = loadBooks($dbconnect);
-var_dump($_SESSION['book']);
+//var_dump($_SESSION['book']);
 
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://use.fontawesome.com/8ad1b327a2.js"></script>
-    <link rel="stylesheet" href="./css/styles.css" type="text/css">
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://use.fontawesome.com/8ad1b327a2.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/stylesheet.css" />
 
-    <title>Home Page</title>
+  <title>Home Page</title>
 </head>
+
 <body>
 
-<div>
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Books</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Profile</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Reading List</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Logout</a>
-    </li>
-  </ul>
-</div>   
+  <div>
+    <ul class="nav nav-tabs" style="background-color: rgba(0, 124, 158, 0.724)">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Books</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./profile.php">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./booklist.php">Reading List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./logout.php">Logout</a>
+      </li>
+    </ul>
+  </div>
 
-<span class="heading"> Welcome Back Nikita!
-  Looking to make another addition to your reading list?
-</span>
+  <span class="heading"> Welcome Back Nikita!
+    Looking to make another addition to your reading list?
+  </span>
 
-    <div class="container-fluid">
-      
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+  <div class="container-fluid">
+
+    <div class="sort-functions">
+      <button type="button" class="btn btn-outline-dark p-2 m-2">Sort A-Z</button>
+      <button type="button" class="btn btn-outline-dark p-2 m-2">Sort Genre</button>
+      <button type="button" class="btn btn-outline-dark p-2 m-2">Sort Author</button>
+    </div>
+
+
+    <div class="book-container">
+
+
+    <?php
+
+    foreach ($_SESSION['book'] as $books) {
+
+      echo '
+   
+            <div class="card d-inline-flex p-2 m-2" style="width: 25rem;">
+            <img src=' . $books->image . ' class="card-img-top" alt="Book Thumbnail"/>
             <div class="card-body">
-              <h5 class="card-title">Book Name</h5>
-              <p class="card-text">Author</p>
-              <p class="card-text">Year</p>
-              <p class="card-text">Genre</p>
-              <p class="card-text">Ages</p>
+              <h5 class="card-title"> ' .  $books->title . ' </h5>
+              <p class="card-text"> ' . $books->author . ' </p>
+              <p class="card-text"> ' . $books->year . ' </p>
+              <p class="card-text"> ' . $books->genre . ' </p>
+              <p class="card-text"> ' . $books->ages . ' </p>
             </div>
             <div class="card-footer">
               <small class="text-muted">
-                <button>Borrow</button>
-                <button>Return</button>
-
+              <button type="button" class="btn btn-outline-success btn-sm">Borrow</button>
+              <button type="button" class="btn btn-outline-warning btn-sm">Return</button>
               </small>
             </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" alt="Los Angeles Skyscrapers"/>
-            <div class="card-body">
-              <h5 class="card-title">Book Name</h5>
-              <p class="card-text">Author</p>
-              <p class="card-text">Year</p>
-              <p class="card-text">Genre</p>
-              <p class="card-text">Ages</p>
             </div>
-            <div class="card-footer">
-              <small class="text-muted">
-                <button>Borrow</button>
-                <button>Return</button>
-              </small>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top" alt="Palm Springs Road"/>
-            <div class="card-body">
-              <h5 class="card-title">Book Name</h5>
-              <p class="card-text">Author</p>
-              <p class="card-text">Year</p>
-              <p class="card-text">Genre</p>
-              <p class="card-text">Ages</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">
-              <button>Borrow</button>
-              <button>Return</button>
-              </small>
-            </div>
-          </div>
-        </div>
-      </div>
+            ';
+              }
+
+    ?>
 
     </div>
 
 
-    <?php 
-  
-  foreach ($_SESSION['book'] as $books) {
-    echo "
-    <div>
-    $books->book_id
-    </div>
-    <div>
-    $books->title
-    </div>
-    <div>
-    $books->author
-    </div>
-    <div>
-    $books->author_id    
-    </div>
-    <div>
-    $books->genre    
-    </div>
-    <div>
-    $books->ages    
-    </div> 
-    <div>
-    $books->year    
-    </div>  
-    <div>
-    $books->image
-    </div>   
-    
-    ";
-  }
-    
-  ?>
-    
+  </div>
+
 </body>
+
+
+<footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 124, 158, 0.724);">
+    © 2022 Copyright:
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+  </div>
+  <!-- Copyright -->
+</footer>
+
 </html>

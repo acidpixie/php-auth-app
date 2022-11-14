@@ -53,7 +53,7 @@ if ($result = $connectedToDb->query($statement)) {
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/8ad1b327a2.js"></script>
-    <link rel="stylesheet" href="./css/styles.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./css/stylesheet.css"/>
 
     <title>Login Page</title>
 </head>
@@ -126,35 +126,6 @@ if ($result = $connectedToDb->query($statement)) {
   </section>
   <!-- Section: Design Block -->
 
-  <?php 
-  
-  foreach ($_SESSION['user'] as $users) {
-    echo "
-    <div>
-        $users->id
-    </div>
-    <div>
-        $users->firstname
-    </div>
-    <div>
-        $users->surname
-    </div>
-    <div>
-        $users->email    
-    </div>
-    <div>
-        $users->password    
-    </div>
-    <div>
-        $users->type    
-    </div>  
-    
-    ";
-  }
-    
-  ?>
-
-    
     </body>
 </html>
 

@@ -18,7 +18,7 @@ error_reporting(E_ALL);
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/8ad1b327a2.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/stylesheet.css"/>
     
     <title>Reset Password</title>
 </head>

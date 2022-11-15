@@ -26,6 +26,7 @@ if ($result = $connectedToDb->query($myBooks)) {
     die("Connection Failed: " . $connectedToDb->error);
 }
 
+
 }
 ?>
 

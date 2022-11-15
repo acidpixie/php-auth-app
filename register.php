@@ -5,6 +5,26 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+include "./classes/DBConnect.php";
+include "./classes/User.php";
+
+// include "./includes/register.inc.php";
+
+/*if (isset($_POST['registerBtn'])) {
+
+  $firstname = $_POST['firstname'];
+  $surname = $_POST['surname'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $type = $_POST['type'];
+  
+  $newUser = new User ($firstname, $surname, $email, $password, $type);
+  create($connectedToDb, $newUser->id, $newUser->firstname, $newUser->surname, $newUser->email, $newUser->password, $newUser->type);
+  array_push($dbUsers, $newUser);
+
+  unset($_POST['registerBtn']);
+}
+*/
 
 ?>
 
@@ -47,7 +67,8 @@ error_reporting(E_ALL);
               ">
             <div class="card-body p-5 shadow-5 text-center">
               <h2 class="fw-bold mb-5">Register New User</h2>
-              <form>
+
+              <form method="post" action="">
 
 
                 <!-- 2 column grid layout with text inputs for the first and last names -->
@@ -109,6 +130,34 @@ error_reporting(E_ALL);
   </section>
   <!-- Section: Design Block -->
 </body>
+
+<?php 
+  $firstname =  $_REQUEST['firstname'];
+  $surname = $_REQUEST['surname'];
+  $email =  $_REQUEST['email'];
+  $password = $_REQUEST['password'];
+  $type = $_REQUEST['type'];
+  
+  // Performing insert query execution
+  // here our table name is college
+  $sqlData = "INSERT INTO users  VALUES ('$firstname',
+      '$surname','$email','$password','$type')";
+  
+  if(mysqli_query($mysqli, $sql)){
+      echo "<h3>data stored in a database successfully."
+          . " Please browse your localhost php my admin"
+          . " to view the updated data</h3>";
+
+      echo nl2br("\n$firstname\n $surname\n "
+          . "$email\n $password\n $type");
+  } else{
+      echo "ERROR: Hush! Sorry $sqlData. "
+          . mysqli_error($mysqli);
+  }
+  
+  // Close connection
+  mysqli_close($mysqli);
+  ?>
 
     
 </head>

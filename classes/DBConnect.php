@@ -7,25 +7,19 @@ private $user = 'root';
 private $password = 'root';
 private $database = 'library';
 
-/* public function __construct($host, $user, $password, $database)
-{
-    $this->host = $host;
-    $this->user = $user;
-    $this->password = $password;
-    $this->database = $database;
-} */
-
     public function connectToDB() {
 
-        $mysqli = new mysqli($this->host, $this->user, $this->password, $this->database);
+        $mysqli = new mysqli($this->host, $this->user, $this->password, $this->database);     
+        
+        $conn = $mysqli;
 
         //check if connected
-        if ($mysqli->connect_error) {
-            die("Connection failed: " . $mysqli->connect_error);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
             
         } else {
             echo "Connected successfully";
-            return $mysqli;
+            return $conn;
         }
     }
 

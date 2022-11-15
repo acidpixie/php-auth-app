@@ -14,33 +14,6 @@ $dbconnect = new DBConnect();
 $_SESSION['user'] = loadData($dbconnect);
 var_dump($_SESSION['user']);
 
-/* 
-$connectedToDb = $dbconnect->connectToDB();
-
-$statement = "SELECT * FROM  users";
-
-if ($result = $connectedToDb->query($statement)) {
-
-  // var_dump($result) ;
-  $connectedToDb->close();
-
-  // while ($obj = $result->fetch_object("User", ['id', 'firstname', 'surname', 'email', 'password', 'type'])) {
-
-  while ($obj = $result->fetch_object()) {
-      //gets rid of the stdclass
-    $newUser = new User($obj->id, $obj->firstname, $obj->surname, $obj->email, $obj->password, $obj->type);
-
-    var_dump($newUser);
-    echo "<br> <br>";
-    echo "$newUser";
-  }
-
-  } else {
-
-  die("Connection Failed: " . $connectedToDb->error);
-}
-*/
-
 ?>
 
 <!DOCTYPE html>
@@ -128,20 +101,3 @@ if ($result = $connectedToDb->query($statement)) {
 
     </body>
 </html>
-
-
-
- <!--Table with Books
-    Book Id, Book Name, Year, Genre, Age Group
-
-    Table with Authors
-    Author Id, Author Name, Age, Genre, Book Id  (foreign key for book id - relational db)
-
-    Display Books for signed in user.
-
-    Search Bar to search through database
-    members cannot search for an author
-    admin role to crud on both tables
-    search by word
-    sort books by name, author, genre
-    -->

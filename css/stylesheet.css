@@ -20,8 +20,9 @@ body {
 }
 
 .book-container {
-    display: flex;
     justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     color: #015065b9;
 }
@@ -33,4 +34,9 @@ body {
 
 footer {
     color: white;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
 }

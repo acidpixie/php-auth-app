@@ -14,6 +14,8 @@ $dbconnect = new DBConnect();
 $_SESSION['book'] = loadBooks($dbconnect);
 //var_dump($_SESSION['book']);
 
+
+
 ?>
 
 
@@ -59,12 +61,15 @@ $_SESSION['book'] = loadBooks($dbconnect);
 
   <div class="container-fluid">
 
+  <form method="post" action="homepage.php">
+
     <div class="sort-functions">
-      <button type="button" class="btn btn-outline-dark p-2 m-2">Sort A-Z</button>
-      <button type="button" class="btn btn-outline-dark p-2 m-2">Sort Genre</button>
-      <button type="button" class="btn btn-outline-dark p-2 m-2">Sort Author</button>
+      <button type="submit" class="btn btn-outline-dark p-2 m-2" name="sortAZ">Sort A-Z</button>
+      <button type="submit" class="btn btn-outline-dark p-2 m-2" name="sortG">Sort Genre</button>
+      <button type="submit" class="btn btn-outline-dark p-2 m-2" name="sortA">Sort Author</button>
     </div>
 
+  </form>
 
     <div class="book-container">
 
@@ -74,15 +79,17 @@ $_SESSION['book'] = loadBooks($dbconnect);
     foreach ($_SESSION['book'] as $books) {
 
       echo '
+
+            <div class="items">
    
-            <div class="card d-inline-flex p-2 m-2" style="width: 25rem;">
-            <img src=' . $books->image . ' class="card-img-top" alt="Book Thumbnail"/>
+            <div class="card p-2 m-2" style="width: 20rem;">
+            <img src=' . $books->getImage() . ' class="card-img-top" alt="Book Thumbnail"/>
             <div class="card-body">
-              <h5 class="card-title"> ' .  $books->title . ' </h5>
-              <p class="card-text"> ' . $books->author . ' </p>
-              <p class="card-text"> ' . $books->year . ' </p>
-              <p class="card-text"> ' . $books->genre . ' </p>
-              <p class="card-text"> ' . $books->ages . ' </p>
+              <h5 class="card-title"> ' .  $books->getTitle() . ' </h5>
+              <p class="card-text"> ' . $books->getAuthor() . ' </p>
+              <p class="card-text"> ' . $books->getYear() . ' </p>
+              <p class="card-text"> ' . $books->getGenre() . ' </p>
+              <p class="card-text"> ' . $books->getAges() . ' </p>
             </div>
             <div class="card-footer">
               <small class="text-muted">
@@ -91,7 +98,11 @@ $_SESSION['book'] = loadBooks($dbconnect);
               </small>
             </div>
             </div>
+
+            </div>
             ';
+
+            
               }
 
     ?>

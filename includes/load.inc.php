@@ -25,4 +25,4 @@ if ($result = $connectedToDb->query($statement)) {
 
   die("Connection Failed: " . $connectedToDb->error);
 }
-}
+} 

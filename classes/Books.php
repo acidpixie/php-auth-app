@@ -25,5 +25,94 @@ class Book {
         
     }
 
+    //getters and setters
+
+    public function getBook_id()
+    {
+        return $this->book_id;
+    }
+
+    public function setBook_id($book_id)
+    {
+        $this->book_id = $book_id;
+        return $this;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+        return $this;
+    }
+
+    public function getAuthor_id()
+    {
+        return $this->author_id;
+    }
+
+    public function setAuthor_id($author_id)
+    {
+        $this->author_id = $author_id;
+        return $this;
+    }
+
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+
+    public function setGenre($genre)
+    {
+        $this->genre = $genre;
+        return $this;
+    }
+
+    public function getAges()
+    {
+        return $this->ages;
+    }
+
+    public function setAges($ages)
+    {
+        $this->ages = $ages;
+        return $this;
+    }
+
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    public function setYear($year)
+    {
+        $this->year = $year;
+        return $this;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+        return $this;
+    }
 
 }

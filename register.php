@@ -8,30 +8,25 @@ error_reporting(E_ALL);
 include "./classes/DbConnect.php";
 include "./classes/User.php";
 include "./includes/create.inc.php";
+include "./includes/insert.php";
 
 session_start();
 
 
-
-
-
 $dbconnect = new DbConnect();
 
-//if register is clicked create user object
-if (isset($_POST['registerBtn'])) {
+if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
-  $id = "";
-  $firstname = $_POST['firstname'];
-  $surname = $_POST['surname'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  $type = $_POST['type'];
+  $data = $_REQUEST['info'];
 
-  $newUser = new User($id, $firstname, $surname, $email, $password, $type);
-  create($dbconnect, $newUser->$firstname, $newUser->$surname, $newUser->$email, $newUser->$password, $newUser->$type);
+  if (empty($data)) {
+    echo "data is empty";
+  }
+  else {
+    echo $data;
+  }
 
-  unset($_REQUEST);
-
+$conn->close();
 }
 
 ?>
@@ -76,7 +71,7 @@ if (isset($_POST['registerBtn'])) {
             <div class="card-body p-5 shadow-5 text-center">
               <h2 class="fw-bold mb-5">Register New User</h2>
 
-              <form method="post" action="<?=$_SERVER['PHP_SELF']?>">
+              <form method="post" action="index.php">
 
 
                 <!-- 2 column grid layout with text inputs for the first and last names -->

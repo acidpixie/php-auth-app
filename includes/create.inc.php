@@ -15,4 +15,6 @@ function create($DbConnect, $firstname, $surname, $email, $password, $type) {
         die("Connection failed: " . $connectedToDb->error);
     }
 
-}
+} 
+
+?>

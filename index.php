@@ -72,7 +72,7 @@ var_dump($_SESSION['user']);
                 </div>
   
                   <!-- Submit button -->
-                <button type="login" name="loginBtn" class="btn btn-dark btn-block mb-4">
+                <button type="submit" name="loginBtn" class="btn btn-dark btn-block mb-4">
                   Login
                 </button>
 

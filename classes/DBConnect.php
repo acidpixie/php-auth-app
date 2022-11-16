@@ -11,7 +11,7 @@ private $database = 'library';
 
         //$mysqli = new mysqli($this->host, $this->user, $this->password, $this->database);     
         
-        $conn=mysqli_connect($this->host, $this->user, $this->password, $this->database);
+        $conn = mysqli_connect($this->host, $this->user, $this->password, $this->database);
 
         //check if connected
         if ($conn->connect_error) {

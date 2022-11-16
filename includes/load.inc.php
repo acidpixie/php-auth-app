@@ -1,10 +1,10 @@
 <?php 
 
-function loadData($DBConnect) {
+function loadData($DbConnect) {
 
   $dbUsers = []; //temp array to store data from the database
 
-$connectedToDb = $DBConnect->connectToDB();
+$connectedToDb = $DbConnect->connectToDB();
 
 //sql statement to get info from DB table
 $statement = "SELECT * FROM  users";

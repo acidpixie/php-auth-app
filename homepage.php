@@ -5,11 +5,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include "./classes/DBConnect.php";
+include "./classes/DbConnect.php";
 include "./classes/Books.php";
 include "./includes/books.inc.php";
 
-$dbconnect = new DBConnect();
+$dbconnect = new DbConnect();
 
 $_SESSION['book'] = loadBooks($dbconnect);
 //var_dump($_SESSION['book']);

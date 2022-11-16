@@ -1,6 +1,6 @@
 <?php 
 
-class DBConnect {
+class DbConnect {
 
 private $host = 'localhost';
 private $user = 'root';
@@ -9,9 +9,9 @@ private $database = 'library';
 
     public function connectToDB() {
 
-        $mysqli = new mysqli($this->host, $this->user, $this->password, $this->database);     
+        //$mysqli = new mysqli($this->host, $this->user, $this->password, $this->database);     
         
-        $conn = $mysqli;
+        $conn=mysqli_connect($this->host, $this->user, $this->password, $this->database);
 
         //check if connected
         if ($conn->connect_error) {

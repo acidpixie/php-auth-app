@@ -51,7 +51,7 @@
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 124, 158, 0.724);">
     © 2022 Copyright:
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+    <p>"Never trust the storyteller. Only trust the story."</p>
   </div>
   <!-- Copyright -->
 </footer>

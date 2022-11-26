@@ -5,14 +5,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include "./classes/DbConnect.php";
-include "./classes/User.php";
-include "./includes/load.inc.php";
+include "./includes/login.inc.php";
 
-$dbconnect = new DbConnect();
-  
-$_SESSION['user'] = loadData($dbconnect);
-var_dump($_SESSION['user']);
 
 ?>
 
@@ -57,7 +51,7 @@ var_dump($_SESSION['user']);
             <div class="card-body p-5 shadow-5 text-center">
               <h2 class="fw-bold mb-5">Login</h2>
 
-              <form action="./homepage.php" method="post">
+              <form action="./includes/login.inc.php" method="post">
                 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
@@ -72,7 +66,7 @@ var_dump($_SESSION['user']);
                 </div>
   
                   <!-- Submit button -->
-                <button type="submit" name="loginBtn" class="btn btn-dark btn-block mb-4">
+                <button type="submit" name="login" class="btn btn-dark btn-block mb-4">
                   Login
                 </button>
 

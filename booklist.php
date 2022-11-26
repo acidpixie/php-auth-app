@@ -1,3 +1,35 @@
+<?php
+
+//error checking code
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include "./classes/DbConnect.php";
+include "./classes/Books.php";
+include "./includes/books.inc.php";
+
+$dbconnect = new DbConnect();
+
+/* if(isset($_POST['borrow'])) {
+
+  try { 
+    borrowBook();
+  } catch (Exception $error) {
+    echo "Error loading Books";
+  }
+
+  foreach ($_SESSION['book'] as $books) {
+    if ($books->getTitle() == $_POST['borrow']) {
+      $borrow = $book;
+    }
+  }
+} */
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +83,7 @@
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 124, 158, 0.724);">
     © 2022 Copyright:
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+    <p>"Never trust the storyteller. Only trust the story."</p>
   </div>
   <!-- Copyright -->
 </footer>

@@ -7,27 +7,10 @@ error_reporting(E_ALL);
 
 include "./classes/DbConnect.php";
 include "./classes/User.php";
-include "./includes/create.inc.php";
 include "./includes/insert.php";
 
 session_start();
 
-
-$dbconnect = new DbConnect();
-
-if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-
-  $data = $_REQUEST['info'];
-
-  if (empty($data)) {
-    echo "data is empty";
-  }
-  else {
-    echo $data;
-  }
-
-$conn->close();
-}
 
 ?>
 
@@ -71,7 +54,7 @@ $conn->close();
             <div class="card-body p-5 shadow-5 text-center">
               <h2 class="fw-bold mb-5">Register New User</h2>
 
-              <form method="post" action="index.php">
+              <form method="post" action="./includes/insert.php">
 
 
                 <!-- 2 column grid layout with text inputs for the first and last names -->
@@ -104,7 +87,7 @@ $conn->close();
 
                 <!-- User Type Selection -->
                 <div class="form-outline mb-4">
-                  <input type="radio" value="0" id="radioOne" name="type" checked/>
+                  <input type="radio" value="0" id="radioOne" name="type" />
                   <label for="radioOne" class="radio">User</label>
                   <input type="radio" value="1" id="radioTwo" name="type" />
                   <label for="radioTwo" class="radio">Librarian</label>
@@ -112,7 +95,7 @@ $conn->close();
        
   
                 <!-- Submit button -->
-                <button type="submit" name="registerBtn" class="btn btn-dark btn-block mb-4">
+                <button type="submit" name="submit" class="btn btn-dark btn-block mb-4">
                   Sign up
                 </button>
 

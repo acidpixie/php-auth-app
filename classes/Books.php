@@ -115,4 +115,26 @@ class Book {
         return $this;
     }
 
+    /* function borrowBook() {
+        $_SESSION['books'] = [];
+        $book = "SELECT * FROM books";
+
+        foreach($book as $books) {
+
+            $borrow = new Book (
+                $books->id,
+                $books->image,
+                $books->title,
+                $books->author,
+                $books->author_id,
+                $books->year,
+                $books->genre,
+                $books->ages,
+            );
+
+            $_SESSION['borrow'] = $borrow;
+            array_push($_SESSION['books'], $borrow);
+        }
+    } */
+
 }

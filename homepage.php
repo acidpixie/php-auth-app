@@ -8,6 +8,7 @@ error_reporting(E_ALL);
 include "./classes/DbConnect.php";
 include "./classes/Books.php";
 include "./includes/books.inc.php";
+include "./includes/sort.php";
 
 $dbconnect = new DbConnect();
 
@@ -55,18 +56,17 @@ $_SESSION['book'] = loadBooks($dbconnect);
     </ul>
   </div>
 
-  <span class="heading"> Welcome Back Nikita!
-    Looking to make another addition to your reading list?
+  <span class="heading"> Welcome to Lucien's Library, Looking to make another addition to your reading list?
   </span>
 
   <div class="container-fluid">
 
-  <form method="post" action="homepage.php">
+  <form method="post" action="/includes/sort.php">
 
     <div class="sort-functions">
-      <button type="submit" class="btn btn-outline-dark p-2 m-2" name="sortAZ">Sort A-Z</button>
-      <button type="submit" class="btn btn-outline-dark p-2 m-2" name="sortG">Sort Genre</button>
-      <button type="submit" class="btn btn-outline-dark p-2 m-2" name="sortA">Sort Author</button>
+      <input type="submit" class="btn btn-outline-dark p-2 m-2" name="sortAZ" value="Sort A-Z">
+      <input type="submit" class="btn btn-outline-dark p-2 m-2" name="sortG" value="Sort Genre">
+      <input type="submit" class="btn btn-outline-dark p-2 m-2" name="sortA" value="Sort Author">
     </div>
 
   </form>
@@ -93,8 +93,8 @@ $_SESSION['book'] = loadBooks($dbconnect);
             </div>
             <div class="card-footer">
               <small class="text-muted">
-              <button type="button" class="btn btn-outline-success btn-sm">Borrow</button>
-              <button type="button" class="btn btn-outline-warning btn-sm">Return</button>
+              <input type="submit" class="btn btn-outline-success btn-sm" name="borrow" value="Borrow">
+              <input type="submit" class="btn btn-outline-warning btn-sm" name="return" value="Return">
               </small>
             </div>
             </div>
@@ -116,7 +116,7 @@ $_SESSION['book'] = loadBooks($dbconnect);
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 124, 158, 0.724);">
     © 2022 Copyright:
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+    <p>"Never trust the storyteller. Only trust the story."</p>
   </div>
   <!-- Copyright -->
 </footer>

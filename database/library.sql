@@ -43,13 +43,13 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`book_id`, `title`, `author`, `author_id`, `genre`, `ages`, `year`, `image`) VALUES
-('9781447273288', 'Children of Time', 'Adrian Tchaikovsky\r\n', 'AT01', 'Science Fiction', 'Adult', 2015, 'children.jpg'),
-('9780007119318', 'Murder on the Orient Express', 'Agatha Christie', 'AC01', 'Mystery Thriller', 'Young Adult', 1934, 'orient-express.jpg'),
-('9780804139021', 'The Martian', 'Andy Weir', 'AW01', 'Science Fiction', 'Young Adult', 2011, 'martian.jpg'),
-('9780684833392', 'Catch 22', 'Joseph Heller', 'JH01', 'Historical Fiction', 'Adult', 1961, 'catch-22.jpg'),
-('9781439167342', 'How To Win Friends and Influence People\r\n', 'Dale Carnegie', 'DC01', 'Business', 'All Ages', 1936, 'influence.jpg'),
-('9781421501680', 'Death Note', 'Tsugumi Ohba', 'TO01', 'Manga', 'Middle grade', 2004, 'death.jpg'),
-('9781444737097', 'A Street Cat Named Bob\r\n', 'James Bowen', 'JB01', 'Biography', 'All Ages', 2012, 'cat.jpg');
+('9781447273288', 'Children of Time', 'Adrian Tchaikovsky\r\n', 'AT01', 'Science Fiction', 'Adult', 2015, 'images/children.jpg'),
+('9780007119318', 'Murder on the Orient Express', 'Agatha Christie', 'AC01', 'Mystery Thriller', 'Young Adult', 1934, 'images/orient-express.jpg'),
+('9780804139021', 'The Martian', 'Andy Weir', 'AW01', 'Science Fiction', 'Young Adult', 2011, 'images/martian.jpg'),
+('9780684833392', 'Catch 22', 'Joseph Heller', 'JH01', 'Historical Fiction', 'Adult', 1961, 'images/catch-22.jpg'),
+('9781439167342', 'How To Win Friends and Influence People\r\n', 'Dale Carnegie', 'DC01', 'Business', 'All Ages', 1936, 'images/influence.jpg'),
+('9781421501680', 'Death Note', 'Tsugumi Ohba', 'TO01', 'Manga', 'Middle grade', 2004, 'images/death.jpg'),
+('9781444737097', 'A Street Cat Named Bob\r\n', 'James Bowen', 'JB01', 'Biography', 'All Ages', 2012, 'images/cat.jpg');
 
 -- --------------------------------------------------------
 

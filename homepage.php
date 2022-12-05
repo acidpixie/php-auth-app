@@ -83,7 +83,7 @@ $_SESSION['book'] = loadBooks($dbconnect);
             <div class="items">
    
             <div class="card p-2 m-2" style="width: 20rem;">
-            <img src=./image/' . $books->getImage() . ' class="card-img-top" alt="Book Thumbnail"/>
+            <img src= ' . $books->getImage() . ' class="card-img-top" alt="Book Thumbnail"/>
             <div class="card-body">
               <h5 class="card-title"> ' .  $books->getTitle() . ' </h5>
               <p class="card-text"> ' . $books->getAuthor() . ' </p>
